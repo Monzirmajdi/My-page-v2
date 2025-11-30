@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <title>معادلات Navier–Stokes — CFD</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body{font-family: "Segoe UI", Tahoma, Arial; direction: rtl; padding:20px; line-height:1.6;}
+    .eq{background:#f8f8f8;border-radius:8px;padding:12px;margin:12px 0;}
+    h1,h2{margin:6px 0}
+    .notation{background:#fffbe6;border-left:4px solid #ffcc00;padding:10px;margin:12px 0}
+  </style>
+</head>
+<body>
+  <h1>نموذج المعادلات — تدفق الهواء حول أسطوانة دائرية</h1>
+
+  <h2>معادلة الاستمرارية (Continuity)</h2>
+  <div class="eq">
+    \[
+    \frac{\partial \rho}{\partial t} + \nabla\cdot(\rho \mathbf{u}) = 0
+    \]
+  </div>
+
+  <h2>معادلة نيوتن-ستوكس (Navier–Stokes) — الصيغة العامة</h2>
+  <div class="eq">
+    \[
+    \rho\left(\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u}\cdot\nabla)\mathbf{u}\right)
+    = -\nabla p + \nabla\cdot\boldsymbol{\tau} + \mathbf{f}
+    \]
+  </div>
+
+  <h2>الصيغة المبسّطة (Incompressible, constant \(\mu\))</h2>
+  <div class="eq">
+    \[
+    \rho\left(\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u}\cdot\nabla)\mathbf{u}\right)
+    = -\nabla p + \mu \nabla^{2}\mathbf{u} + \mathbf{f}
+    \quad,\quad
+    \nabla\cdot\mathbf{u}=0
+    \]
+  </div>
+
+  <h2>الحدود (Boundary conditions)</h2>
+  <div class="notation">
+    No-slip: \(\mathbf{u}\big|_{\text{wall}} = \mathbf{0}\) <br>
+    Velocity inlet: \(\mathbf{u}\to\mathbf{U}_{\infty}\) , Pressure outlet: \(p=p_{\text{out}}\)
+  </div>
+
+  <h2>المعايير</h2>
+  <div class="eq">
+    \[
+    Re = \frac{\rho U_{\infty} D}{\mu}, \qquad Ma = \frac{U_{\infty}}{a}
+    \]
+  </div>
+
+  <p>يمكنك تحميل هذه الصفحة وفتحها في أي متصفح؛ MathJax سيجعل المعادلات تظهر بدقّة كما في المراجع.</p>
+</body>
+</html>
